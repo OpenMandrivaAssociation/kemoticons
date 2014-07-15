@@ -4,9 +4,9 @@
 %define debug_package %{nil}
 
 Name: kemoticons
-Version: 4.99.0
-Release: 3
-Source0: http://ftp5.gwdg.de/pub/linux/kde/unstable/frameworks/%{version}/%{name}-%{version}.tar.xz
+Version: 5.0.0
+Release: 1
+Source0: http://ftp5.gwdg.de/pub/linux/kde/stable/frameworks/%{version}/%{name}-%{version}.tar.xz
 Summary: KDE Frameworks 5 Emoticons framework
 URL: http://kde.org/
 License: GPL
@@ -57,7 +57,10 @@ DESTDIR="%{buildroot}" ninja -C build install %{?_smp_mflags}
 %{_datadir}/emoticons
 %{_datadir}/kservices5/*
 %{_datadir}/kservicetypes5/*
-%{_libdir}/plugins/emoticonstheme_*
+%dir %{_libdir}/plugins/kf5/emoticonsthemes
+# FIXME may want to package individual themes separately if they
+# become too big
+%{_libdir}/plugins/kf5/emoticonsthemes/*
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}
