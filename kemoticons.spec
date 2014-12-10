@@ -46,7 +46,8 @@ Development files for the KDE Frameworks 5 Emoticons library
 
 %prep
 %setup -q
-%cmake -G Ninja
+%cmake -G Ninja \
+	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %build
 ninja -C build
@@ -58,10 +59,10 @@ DESTDIR="%{buildroot}" ninja -C build install %{?_smp_mflags}
 %{_datadir}/emoticons
 %{_datadir}/kservices5/*
 %{_datadir}/kservicetypes5/*
-%dir %{_libdir}/plugins/kf5/emoticonsthemes
+%dir %{_libdir}/qt5/plugins/kf5/emoticonsthemes
 # FIXME may want to package individual themes separately if they
 # become too big
-%{_libdir}/plugins/kf5/emoticonsthemes/*
+%{_libdir}/qt5/plugins/kf5/emoticonsthemes/*
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}
@@ -71,4 +72,4 @@ DESTDIR="%{buildroot}" ninja -C build install %{?_smp_mflags}
 %{_includedir}/*
 %{_libdir}/*.so
 %{_libdir}/cmake/KF5*
-%{_prefix}/mkspecs/*
+%{_libdir}/qt5/mkspecs/modules/*.pri
