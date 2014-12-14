@@ -5,8 +5,8 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kemoticons
-Version: 5.4.0
-Release: 2
+Version: 5.5.0
+Release: 1
 Source0: http://ftp5.gwdg.de/pub/linux/kde/%{stable}/frameworks/%{version}/%{name}-%{version}.tar.xz
 Summary: KDE Frameworks 5 Emoticons framework
 URL: http://kde.org/
@@ -63,6 +63,7 @@ DESTDIR="%{buildroot}" ninja -C build install %{?_smp_mflags}
 # FIXME may want to package individual themes separately if they
 # become too big
 %{_libdir}/qt5/plugins/kf5/emoticonsthemes/*
+%{_libdir}/qt5/plugins/kf5/*.so
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}
