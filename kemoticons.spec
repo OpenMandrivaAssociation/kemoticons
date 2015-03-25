@@ -5,7 +5,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kemoticons
-Version: 5.7.0
+Version: 5.8.0
 Release: 1
 Source0: http://ftp5.gwdg.de/pub/linux/kde/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: KDE Frameworks 5 Emoticons framework
@@ -26,7 +26,7 @@ BuildRequires: ninja
 Requires: %{libname} = %{EVRD}
 
 %description
-KDE Frameworks 5 Emoticons framework
+KDE Frameworks 5 Emoticons framework.
 
 %package -n %{libname}
 Summary: The KDE Frameworks 5 Emoticons library
@@ -34,7 +34,7 @@ Group: System/Libraries
 Requires: %{name} = %{EVRD}
 
 %description -n %{libname}
-The KDE Frameworks 5 Emoticons library
+The KDE Frameworks 5 Emoticons library.
 
 %package -n %{devname}
 Summary: Development files for the KDE Frameworks 5 Emoticons library
@@ -42,7 +42,7 @@ Group: Development/KDE and Qt
 Requires: %{libname} = %{EVRD}
 
 %description -n %{devname}
-Development files for the KDE Frameworks 5 Emoticons library
+Development files for the KDE Frameworks 5 Emoticons library.
 
 %prep
 %setup -q
