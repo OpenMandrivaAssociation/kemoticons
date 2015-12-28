@@ -13,12 +13,15 @@ URL: http://kde.org/
 License: GPL
 Group: System/Libraries
 BuildRequires: pkgconfig(Qt5Core)
+BuildRequires: pkgconfig(QtGui)
 BuildRequires: pkgconfig(Qt5Test)
+BuildRequires: pkgconfig(Qt5Xml)
+BuildRequires: pkgconfig(Qt5Widgets)
 BuildRequires: cmake(KF5DocTools)
 BuildRequires: cmake(ECM)
-BuildRequires: cmake(Qt5)
 BuildRequires: cmake(KF5Archive)
 BuildRequires: cmake(KF5Config)
+BuildRequires: cmake(KF5CoreAddons)
 BuildRequires: cmake(KF5Service)
 Requires: %{libname} = %{EVRD}
 
